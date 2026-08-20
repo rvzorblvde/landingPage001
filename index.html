@@ -17,7 +17,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#cpu" class="activa">
+                        <a href="#cpu" class="">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V5.25a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 5.25v13.5A2.25 2.25 0 0 0 6.75 19.5Z" />
                             </svg>
@@ -106,7 +106,7 @@
         <!--Header superior-->
         <header>
             <div class="header-left">
-                <button type="button" aria-label="Toggle Menu">
+                <button type="button" id="menuToggle" aria-label="Toggle Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                     </svg>
@@ -125,14 +125,28 @@
         <main>
             <!--Inicio-->
             <section class="hero">
-                <h1>POTENCIA TU SETUP</h1>
-                <p>Logra el centro de juegos definitivo con hardware de precisión diseñado para el rendimiento absoluto y la confiabilidad absoluta.</p>
-                <a href="#destacado" class="btn-cta">
-                    COMPRA AHORA
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                </a>
+                <!--Carrusel de fotos-->
+                <div class="hero-slider">
+                    <div class="slide active" style="background-image: url('/assets/images/setup.jpg');"></div>
+                    <div class="slide" style="background-image: url(/assets/images/gpu_imagen.jpg);"></div>
+                    <div class="slide" style="background-image: url(/assets/images/cpu_imagen.jpg);"></div>
+                    <div class="slide" style="background-image: url(/assets/images/mouse.jpg);"></div>
+                    <div class="slide" style="background-image: url(/assets/images/storage.jpg);"></div>
+                    <div class="slide" style="background-image: url(/assets/images/ram_imagen.jpg);"></div>
+                </div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-content">
+                    <h1>POTENCIA TU SETUP</h1>
+                    <p>Logra el centro de juegos definitivo con hardware de precisión diseñado para el rendimiento absoluto y la confiabilidad absoluta.</p>
+                    <a href="#destacado" class="btn-cta">
+                        COMPRA AHORA
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="arrow-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
             </section>
 
             <!-- Featured -->
@@ -257,5 +271,7 @@
             </div>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
