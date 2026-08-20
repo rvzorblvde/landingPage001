@@ -61,6 +61,11 @@ Sidebar
     bottom: 0;
     left: 0;
     z-index: 50;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#sidebar.collapsed {
+    transform: translateX(-100%);
 }
 
 #sidebar h2 {
@@ -117,6 +122,11 @@ Contenedor principal y header
     display: flex;
     flex-direction: column;
     min-width: 0;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-wrapper.expanded {
+    margin-left: 0;
 }
 
 header {
@@ -186,15 +196,24 @@ header {
 Main y Secciones
 */
 main {
-    padding: 4.5rem 3.5rem 6rem;
+    padding: 0 0 5rem 0;
     flex: 1;
 }
 
 /* Hero */
 .hero {
+position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 520px; /* Altura más imponente */
+    padding: 7rem 2rem 6rem;
+    margin: 0 0 3.5rem 0; /* Eliminamos bordes redondeados y márgenes */
+    border: none;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    max-width: 760px;
-    margin: 1.5rem auto 6rem;
 }
 
 .hero h1 {
@@ -230,6 +249,51 @@ main {
 
 .hero .btn-cta:hover {
     background-color: #b3c9ff;
+}
+
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Capa oscura para que el texto resalte */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* Oscurece el centro y se funde al 100% con el color del fondo abajo */
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 13, 19, 0.45) 0%,
+        rgba(11, 13, 19, 0.7) 60%,
+        var(--bg-main) 100%
+    );
+    z-index: 2;
+}
+
+/* Contenido por encima de las capas */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+}
+
+/* 6. Agregamos el padding lateral a la sección de productos */
+.featured {
+    padding: 0 3.5rem;
 }
 
 /* Featured Header */
